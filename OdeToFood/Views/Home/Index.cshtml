@@ -1,0 +1,21 @@
+﻿@model HomeIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<table>
+    @foreach (var restaurant in Model.Restaurants)
+    {
+        <tr>
+            <td>@restaurant.Id</td>
+            <td>@restaurant.Name</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@restaurant.Id">Details</a>
+            </td>
+        </tr>
+    }
+</table>
+<a asp-action="Create">New Restaurant</a>
+@section Footer{
+    <h1>@Model.MessageOfTheDay</h1>
+}
