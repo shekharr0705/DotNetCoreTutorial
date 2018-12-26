@@ -2,20 +2,10 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<table>
-    @foreach (var restaurant in Model.Restaurants)
-    {
-        <tr>
-            <td>@restaurant.Id</td>
-            <td>@restaurant.Name</td>
-            <td>
-                <a asp-action="Details" asp-route-id="@restaurant.Id">Details</a>
-            </td>
-        </tr>
-    }
-</table>
-<a asp-action="Create">New Restaurant</a>
-@section Footer{
-    <h1>@Model.MessageOfTheDay</h1>
+<h1>All Restaurants </h1>
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant);
 }
+
+<div><a asp-action="Create" class="btn btn-success">New Restaurant</a></div>

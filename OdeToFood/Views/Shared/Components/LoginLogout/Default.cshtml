@@ -1,0 +1,10 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+    <div>Hello,  @User.Identities.FirstOrDefault().Claims.FirstOrDefault(x => x.Type == "name").Value</div>
+    <a class="btn btn-primary" asp-controller="Account" asp-action="Logout">Logout</a>
+}
+else
+{
+    <div>Anonymous user</div>
+    <a class="btn btn btn-primary" asp-controller="Account" asp-action="Login">Login</a>
+}

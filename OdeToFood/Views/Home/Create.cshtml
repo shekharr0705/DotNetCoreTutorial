@@ -1,18 +1,26 @@
 ﻿@model Restaurant
-@{ 
+@{
     ViewBag.Title = "Create";
 }
-<form method="post">
-    <div>
-        <label asp-for="Name"></label>
-        <input asp-for="Name" />
-        <span asp-validation-for="Name"></span>
+<form method="post" style="margin-top:10px">
+    <div class="form-group row">
+        <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name"></span>
+        </div>
     </div>
-    <div>
-        <label asp-for="Cuisine"></label>
-        <select asp-for="Cuisine" asp-items="@Html.GetEnumSelectList<CuisineType>()"></select>
+    <div class="form-group row">
+        <label asp-for="Cuisine" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="Cuisine" asp-items="@Html.GetEnumSelectList<CuisineType>()" class="form-control"></select>
+        </div>
         <span asp-validation-for="Cuisine"></span>
     </div>
-
-    <input type="submit" value="Save" name="Save" />
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input type="submit" value="Save" name="Save" class="btn btn-primary" />
+        </div>
+    </div>
 </form>

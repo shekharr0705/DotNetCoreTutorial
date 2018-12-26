@@ -1,0 +1,14 @@
+﻿@model Restaurant
+
+<section class="card" style="margin-bottom:5px">
+    <div class="card-body">
+        <h2 class="card-title">@Model.Name</h2>
+        <div  class="card-subtitle mb-2 text-muted">
+            <h3>Cousine: <b>@Model.Cuisine</b></h3>
+        </div>
+        <div class="card-link">
+            <a asp-action="Details" asp-route-id="@Model.Id">More</a>
+            <a asp-page="/Restaurants/Edit" asp-route-id="@Model.Id">Edit</a>
+        </div>
+    </div>
+</section>

@@ -4,13 +4,54 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
+    <nav class="navbar navbar-default" style="background-color: #e3f2fd;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">OdeToFood</a>
+            </div>
+            <div class="navbar-right">
+                <vc:login-logout></vc:login-logout>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
         @RenderBody()
+        @*<vc:greeter></vc:greeter>
+        @RenderSection("Footer", required: false)*@
     </div>
-    <footer>
-        @RenderSection("Footer",required:false)
-    </footer>
+    <div>
+        @*<span>extra code for learning</span>*@
+        @*<footer>*@
+
+        @*@await Component.InvokeAsync("greete")   or you can use below tag helper , yoou need to update _ViewImports before using below syntax*@
+
+        @*@if (User.Identity.IsAuthenticated)
+        {
+
+            <div>
+                <div style="display:inline-block"><img src="@User.Identities.FirstOrDefault().Claims.FirstOrDefault(x=>x.Type=="picture").Value" /></div>
+                <div style="display:inline-block;vertical-align:top"><h3>Logged In as : @User.Identities.FirstOrDefault().Claims.FirstOrDefault(x => x.Type == "name").Value</h3></div>
+            </div>
+            foreach (var indentity in User.Identities)
+            {
+                <h3>--@indentity.Name</h3>
+                <ul>
+                    @foreach (var claim in indentity.Claims)
+                    {
+                        <li>@claim.Type-@claim.Value</li>
+                    }
+                </ul>
+            }
+        }
+        else
+        {
+            <h3>Anonimous User</h3>
+        }*@
+
+        @*</footer>*@
+    </div>
 </body>
 </html>

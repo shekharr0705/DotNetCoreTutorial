@@ -1,0 +1,18 @@
+Client ID: 1009118506092-8p2lk7kbro5nc7keouj0chldlal20q7s.apps.googleusercontent.com
+Client secret: REXTTMWGJUyCXWl4JDGOcJAj
+Authority: https://accounts.google.com
+
+
+
+
+
+Configur With OpenID: https://andrewlock.net/an-introduction-to-openid-connect-in-asp-net-core/
+
+
+Create ClientID,ClientSecret Google:  https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/google-logins?view=aspnetcore-2.2
+
+More on third Party Authentication: https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/?view=aspnetcore-2.2
+
+
+
+-- Course Complete Code: https://github.com/OdeToCode/explore-aspnetcore.git
